@@ -1,0 +1,10 @@
+function aa {
+	atom -w ~/.sh/aliases
+	source ~/.sh/aliases
+}
+alias a="atom -n ."
+alias 8080="static -H '{\"Cache-Control\": \"no-cache, must-revalidate\", \"Access-Control-Allow-Origin\":\"*\"}' &open http://localhost:8080"
+alias java7="export JAVA_HOME=\"/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home\""
+alias epsolon="ssh -l administrator epsolon77.com"
+alias ni="npm install --save $0"
+alias luft="atom /Applications/LUFTRAUSERS\ copy.app/Contents/Resources/"

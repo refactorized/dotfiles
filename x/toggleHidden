@@ -1,0 +1,13 @@
+#!/bin/bash
+if [[ $(defaults read com.apple.finder AppleShowAllFiles 2>&1) == TRUE ]]
+then
+    echo hidden gonna hide.
+    defaults write com.apple.finder AppleShowAllFiles FALSE 
+    killall Finder
+
+else
+    echo you can execute but you can\'t hide.
+    defaults write com.apple.finder AppleShowAllFiles TRUE 
+    killall Finder
+fi
+
