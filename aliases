@@ -7,3 +7,4 @@ alias 8080="static -H '{\"Cache-Control\": \"no-cache, must-revalidate\", \"Acce
 alias java7="export JAVA_HOME=\"/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home\""
 alias epsolon="ssh -l administrator epsolon77.com"
 alias ni="npm install --save $0"
+alias node-docs='open http://nodejs.org/docs/`node --version`/api/'

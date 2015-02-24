@@ -19,7 +19,3 @@ gh-summon () { #todo: add conditionals for breaking if error.
 	git remote add origin git@github.com:$(cfg github.username)/$1.git
 	git push origin master
 }
-
-node-docs () {
-  open http://nodejs.org/docs/`node --version`/api/
-}
