@@ -1,11 +1,11 @@
 cfg () { echo $(< ~/.sh/cfgs/$1); }
 
-gh-repo () { #todo: add conditionals for breaking if error. 
+gh-repo () { #todo: add conditionals for breaking if error.
 	curl -u $(cfg github.username) https://api.github.com/user/repos -d "{\"name\":\"${1}\",\"description\":\"$2\"}"
 	git remote add origin git@github.com:$(cfg github.username)/$1.git
 }
 
-gh-summon () { #todo: add conditionals for breaking if error. 
+gh-summon () { #todo: add conditionals for breaking if error.
 	echo Summoning Octocat to create $1 repository...
 	mkdir $1
 	cd $1

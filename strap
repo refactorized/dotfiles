@@ -1,0 +1,10 @@
+# setup environment for installed tools
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# nvm
+source ~/.nvm/nvm.sh
+
+# brew, etc
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
