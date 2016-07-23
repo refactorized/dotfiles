@@ -1,21 +1,3 @@
 cfg () { echo $(< ~/.sh/cfgs/$1); }
 
-gh-repo () { #todo: add conditionals for breaking if error.
-	curl -u $(cfg github.username) https://api.github.com/user/repos -d "{\"name\":\"${1}\",\"description\":\"$2\"}"
-	git remote add origin git@github.com:$(cfg github.username)/$1.git
-}
-
-gh-summon () { #todo: add conditionals for breaking if error.
-	echo Summoning Octocat to create $1 repository...
-	mkdir $1
-	cd $1
-	git init
-	#todo: construct readme from name and desc, copy some default .gitignore
-	touch README.md
-	git add README.md
-	git commit -am"init"
-	#todo: something more useful with output
-	curl -u $(cfg github.username) https://api.github.com/user/repos -d "{\"name\":\"${1}\",\"description\":\"$2\"}" > /dev/null
-	git remote add origin git@github.com:$(cfg github.username)/$1.git
-	git push origin master
-}
+# we don't need bash scripts for github now - install hub 'brew install hub'
