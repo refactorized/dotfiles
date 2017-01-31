@@ -21,7 +21,9 @@ if [ -e ~/.bash_profile ] ; then
     rm -f ~/.bash_profile
   fi
 fi
-  ln -Ffhs `pwd`/bash_profile ~/.bash_profile
-  echo `pwd`/bash_profile ~/.bash_profile
-  echo 'symlinked new ~/.bash_profile, sourcing it now.'
-  source ~/.bash_profile
+ln -Ffhs `pwd`/bash_profile ~/.bash_profile
+echo `pwd`/bash_profile ~/.bash_profile
+echo 'symlinked new ~/.bash_profile, sourcing it now.'
+source ~/.bash_profile
+
+echo 'done, make sure hub is installed ( brew install hub ) or remove alias git=hub from ~/.sh/aliases'
