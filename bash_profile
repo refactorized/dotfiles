@@ -5,7 +5,7 @@ source ~/.sh/bashcolors
 source ~/.sh/aliases
 
 # local aliases (not on this repo)
-source ~/.sh/local/*.aliases
+source ~/.sh/local/**/**.aliases
 
 source ~/.sh/funcs
 source ~/.sh/strap
