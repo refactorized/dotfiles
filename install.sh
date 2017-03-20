@@ -1,8 +1,12 @@
+#!/bin/bash
+
+dir=`pwd`
+
 if [ -L ~/.sh ] ; then
   rm -f ~/.sh
 fi
 if [ ! -e ~/.sh ] ; then
-  ln -Ffhs `pwd` ~/.sh
+  ln -Ffhs $dir ~/.sh
 fi
 if [ ! -e ~/.local/bin/bashmarks.sh ] ; then
   git clone git://github.com/huyng/bashmarks.git
@@ -21,8 +25,12 @@ if [ -e ~/.bash_profile ] ; then
     rm -f ~/.bash_profile
   fi
 fi
-ln -Ffhs `pwd`/bash_profile ~/.bash_profile
-echo `pwd`/bash_profile ~/.bash_profile
+ln -Ffhs $dir/bash_profile ~/.bash_profile
+echo $dir/bash_profile "=>" ~/.bash_profile
+
+mkdir -p $dir/local
+echo 'put local .aliases files in $dir/local/, if needed.'
+
 echo 'symlinked new ~/.bash_profile, sourcing it now.'
 source ~/.bash_profile
 
