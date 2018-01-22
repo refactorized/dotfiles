@@ -3,3 +3,7 @@ cfg () { echo $(< ~/.sh/cfgs/$1); }
 # we don't need bash scripts for github now - install hub 'brew install hub'
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}

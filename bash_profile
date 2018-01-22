@@ -15,3 +15,6 @@ source ~/.sh/completions/*
 PS1="\r\n$Cyan[\w] $Blue\r\n$IRed\h: $Color_Off"
 
 export PATH="~/.sh/x:$PATH"
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/anaconda/bin:$PATH"
