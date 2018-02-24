@@ -2,6 +2,7 @@
 
 dir=`pwd`
 
+
 if [ -L ~/.sh ] ; then
   rm -f ~/.sh
 fi
@@ -15,6 +16,8 @@ if [ ! -e ~/.local/bin/bashmarks.sh ] ; then
   cd ..
   rm -rf bashmarks
 fi
+
+# todo: use a function to dry this up
 if [ -e ~/.bash_profile ] ; then
   if [ -L ~/.bash_profile ] ; then
     echo 'breaking old bash profile symlink'
@@ -27,6 +30,20 @@ if [ -e ~/.bash_profile ] ; then
 fi
 ln -Ffhs $dir/bash_profile ~/.bash_profile
 echo $dir/bash_profile "=>" ~/.bash_profile
+
+# todo - some kind of env config so i don't have my name as the default github user
+if [ -e ~/.gitconfig ] ; then
+  if [ -L ~/.gitconfig ] ; then
+    echo 'breaking old user gitconfig symlink'
+    rm -f ~/.gitconfig
+  else [ -f ~/.gitconfig ]
+    echo 'moving old gitconfig to ._gitconfig.old'
+    cp -f ~/.gitconfig ~/._gitconfig.old
+    rm -f ~/.gitconfig
+  fi
+fi
+ln -Ffhs $dir/gitconfig ~/.gitconfig
+echo $dir/gitconfig "=>" ~/.gitconfig
 
 mkdir -p $dir/local
 echo 'put local .aliases files in $dir/local/, if needed.'
